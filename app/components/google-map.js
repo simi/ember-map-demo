@@ -26,7 +26,6 @@ export default Ember.Component.extend({
 
     var coordinates = null;
     var marker = null;
-    var infoWindow = null;
 
     contacts.forEach(function(contact) {
       coordinates = new google.maps.LatLng(contact.get('latitude'), contact.get('longitude'));
