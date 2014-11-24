@@ -14,7 +14,7 @@ git pull
 ls -1 | grep -v -E '^dist$' | xargs rm -rf
 mv dist/* ./
 mv dist/.* ./
-rmdir dist
+rm -rf dist
 
 # Add everything and push it.
 git commit -am "Update."
