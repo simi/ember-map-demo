@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    adapterNamespace: 'api',
     contentSecurityPolicy: {
       'connect-src': "*",
       'script-src': "'unsafe-eval' *",
@@ -45,6 +46,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.baseURL = '/ember-map-demo';
+    ENV.adapterNamespace = 'ember-map-demo/api';
   }
 
   return ENV;
