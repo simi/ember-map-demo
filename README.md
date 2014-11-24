@@ -39,7 +39,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-* ./deploy.sh
+* `./deploy.sh`
 
 ## Further Reading / Useful Links
 
