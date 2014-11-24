@@ -19,4 +19,5 @@ git commit -am "Update."
 git push
 git checkout master
 git pull
-./install.sh
+npm install
+bower install
