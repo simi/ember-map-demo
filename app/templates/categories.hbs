@@ -1,0 +1,23 @@
+<div id="list">
+  <h2 id='title'>Letnář rework</h2>
+
+  <ul>
+    <li>{{#link-to 'categories.index'}}Vše{{/link-to}}</li>
+    {{#each category in model}}
+    <li>
+      {{#link-to 'categories.show' category}}{{category.name}}{{/link-to}}
+    </li>
+    {{/each}}
+  </ul>
+</div>
+
+
+<div id="detail">
+  {{outlet}}
+</div>
+
+<div id="map">
+  {{google-map latitude="50.1015737" longitude="14.4253931" contacts=contacts}}
+</div>
+
+<div class="clear"></div>
