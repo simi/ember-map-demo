@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Make sure we're in a good state.
 git checkout master
 git pull
