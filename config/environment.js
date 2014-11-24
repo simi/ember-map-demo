@@ -47,6 +47,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.baseURL = '/ember-map-demo';
     ENV.adapterNamespace = 'ember-map-demo/api';
+    ENV.locationType = 'hash';
   }
 
   return ENV;
