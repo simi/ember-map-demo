@@ -15,8 +15,8 @@ mv dist/.* ./
 rm -rf dist
 
 # Add everything and push it.
-git add -a
-git commit -m "Update."
+git add -A
+git commit -m "Deploy..."
 git push
 git checkout master
 git pull
