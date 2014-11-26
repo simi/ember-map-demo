@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import CategoriesListRouteMixin from 'letnar-frontend/mixins/categories-list-route';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(CategoriesListRouteMixin, {
   model: function(params) {
     return this.store.find('category', params.category_id);
   },
