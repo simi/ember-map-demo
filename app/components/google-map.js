@@ -2,8 +2,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  map: null,
+  markers: [],
+
   showMap: function() {
-    this.set('markers', []);
     var container = this.$('.map-canvas');
     var options = {
       center: new google.maps.LatLng(this.get("latitude"), this.get("longitude")),
@@ -16,30 +18,24 @@ export default Ember.Component.extend({
   }.on('didInsertElement'),
 
   showMarkers: function() {
-    var contacts = this.get('contacts');
-    var map = this.get('map');
-    var markers = this.get('markers');
-
-    markers.forEach(function(marker) {
+    this.get('markers').forEach(function(marker) {
       marker.setMap(null);
     });
-    markers = [];
+    this.get('markers').clear();
 
     var coordinates = null;
     var marker = null;
-
-    contacts.forEach(function(contact) {
+    var self = this;
+    this.get('contacts').forEach(function(contact) {
       coordinates = new google.maps.LatLng(contact.get('latitude'), contact.get('longitude'));
       marker = new google.maps.Marker({
         position: coordinates,
-        map: map,
+        map: self.get('map'),
         title: contact.get('name')
       });
 
-      contact.marker = marker;
-      markers.pushObject(marker);
+      self.get('markers').pushObject(marker);
     });
 
-    this.set('markers', markers);
   }.observes('contacts.@each')
 });
